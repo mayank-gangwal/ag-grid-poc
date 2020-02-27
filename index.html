@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style media="only screen">
-    html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        box-sizing: border-box;
-        -webkit-overflow-scrolling: touch;
-    }
-    html {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 0;
-        overflow: auto;
-    }
-    body {
-        padding: 1rem;
-        overflow: auto;
-    }
-</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-<script src='https://unpkg.com/@ag-grid-community/all-modules@22.1.1/dist/ag-grid-community.min.js'></script></head>
+<script src='https://unpkg.com/@ag-grid-community/all-modules@22.1.1/dist/ag-grid-community.min.js'></script>
+<script src="grid.js"></script>     
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 <body>
 
 <div ng-app="basic">
 
-    <div ng-controller="basicController" style="position: relative; width: auto">
-        <div style="padding: 4px">
+    <div ng-controller="basicController" class="divCtrl">
+        <div class="headingStyle">
             <h2> Parameter Lists </h2>
-            <button style="position: absolute; right: 40px;">NEW LIST</button> 
-            <div style="clear: both;"/>
+            <button class="newListBtn">NEW LIST</button> 
         </div>
-        <div style="width: 100%; height: 400px; top: 100px; position: absolute;"
-             ag-grid="gridOptions"
-             class="ag-theme-balham ag-basic">
+        <div ag-grid="gridOptions" class="gridLayout ag-theme-balham ag-basic">
         </div>
     </div>
 
 </div>
 
-    <script src="grid.js"></script>
 </body>
 </html>
