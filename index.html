@@ -1,27 +1,113 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-<script src='https://unpkg.com/@ag-grid-community/all-modules@22.1.1/dist/ag-grid-community.min.js'></script>
-<!-- <script src = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></script> -->
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<script src="grid.js"></script>     
-<link rel="stylesheet" type="text/css" href="mystyle.css">
-</head>
-<body>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://unpkg.com/@ag-grid-community/all-modules@22.1.1/dist/ag-grid-community.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 
-<div ng-app="basic">
-
-    <div ng-controller="basicController" class="divCtrl">
+    <!-- <script src = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></script> -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script> -->
+    <script src="grid.js"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css" />
+  </head>
+  <body>
+    <div ng-app="basic">
+      <div ng-controller="basicController" class="divCtrl">
         <div class="headingStyle">
-            <h2> Parameter Lists </h2>
-            <button class="newListBtn">NEW LIST</button> 
+          <h2>Parameter Lists</h2>
+
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            NEW LIST
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    New List
+                  </h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Name *</label>
+                          <input placeholder="Give this list a name" type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">Data Type *</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="" selected disabled>Select a Data type</option>
+                            <option>Transaction Currency</option>
+                            <option>Channel</option>
+                            <option>Acquirer</option>
+                            <option>IP Country Code</option>
+                            <option>Transaction Type</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description *</label>
+                            <textarea placeholder="Write a brief description about this list" maxlength = "100" class="form-control" id="message-text"></textarea>
+                          </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div ag-grid="gridOptions" id="myGrid" class="gridLayout ag-theme-balham ag-basic">
-        </div>
+        <div
+          ag-grid="gridOptions"
+          id="myGrid"
+          class="gridLayout ag-theme-balham ag-basic"
+        ></div>
+      </div>
     </div>
-
-</div>
-
-</body>
+  </body>
 </html>
