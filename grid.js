@@ -13,48 +13,52 @@
         var columnDefs = [
             {
                 headerName: '', 
-                width: 40, 
+                width: 50, 
                 checkboxSelection: true,
                 headerCheckboxSelection: true,
                 sortable: false,
-                pinned: true
+                pinned: true,
+                filter: false
             },
             {
                 headerName: 'NAME',
                 field: 'name',
-                width: 100                
+                width: 200                
             },
             {
                 headerName: 'DATA TYPE',
                 field: 'dataType',
-                width: 100                
+                width: 200                
             },
             {
                 headerName: 'SIZE',
                 field: 'size',
-                width: 100                
+                width: 200,
+                cellRenderer: sizeRenderer                
             },
             {
                 headerName: 'STATUS',
                 field: 'status',
-                width: 100                
+                width: 200,
+                cellRenderer: statusRenderer
             },
             {
                 headerName: 'LAST UPDATED',
                 field: 'lastUpdated',
-                width: 100                
+                width: 200                
             },
             {
                 headerName: 'ASSOCIATIONS',
                 field: 'associations',
-                width: 100,
-                cellRenderer: 'associationRenderer'
+                width: 200,
+                cellRenderer: associationRenderer
             },
             {
                 headerName: 'RATING',
                 field: 'rating',
-                width: 100,
-                cellRenderer: 'ratingRenderer'                
+                width: 200,
+                cellRenderer: ratingRenderer,
+                filter: false
             }
         ];
 
@@ -65,6 +69,7 @@
             onModelUpdated: onModelUpdated,
             suppressRowClickSelection: true,
             pagination: true,
+            floatingFilter: true,
             paginationPageSize: 10,
             defaultColDef: {
                 sortable: true,
@@ -90,7 +95,7 @@
                     name: firstNames[i % firstNames.length] + ' ' + lastNames[i % lastNames.length],
                     //mayank
                     dataType: dataType1,             
-                    size: Math.round(Math.random() * 100),
+                    size: Math.round(Math.random() * 10),
                     status: status1,
                     lastUpdated: date,
                     associations: Math.round(Math.random() * 10),
@@ -100,16 +105,30 @@
             return rowData;
         }
 
+        function statusRenderer(params){
+            var statusType = params.value === 'Active' ? 'green' : 'grey';
+            var statusDot = '<span style = "height: 10px; width: 10px; background-color:' + statusType +  '; border-radius: 50%; display: inline-block;"> </span>'
+            return statusDot + ' ' + params.value;
+        }
+
         function ratingRenderer(params){
             var stars = '';
-            for(var i =0; i < params.data; i++){
-                stars+= '*'
+            //var fontAwesomeStar = '<i class="fas fa-star"></i>'
+            for(var i =0; i < params.value; i++){
+                //stars+= fontAwesomeStar;
+                stars+='* ';
             }
             return stars;
         }
         
         function associationRenderer(params){
-            return params.data + ' types'
+            var association = (params.value === 0 || params.value === 1 ) ? 'rule' : 'rules' ;
+            return params.value + ' ' + association;
+        }
+
+        function sizeRenderer(params){
+            var size1 = (params.value === 0 || params.value === 1 ) ? 'item' : 'items' ;
+            return params.value + ' ' + size1;
         }
     });
     
