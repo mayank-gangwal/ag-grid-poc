@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "author": "mayank",
   "license": "ISC",
   "dependencies": {
     "ag-grid-community": "^21.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0"
   }
 }

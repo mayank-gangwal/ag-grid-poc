@@ -3,7 +3,7 @@
 
     var app = angular.module('basic', ['agGrid']);
 
-    app.controller('basicController', function($scope) {
+    app.controller('basicController', function($scope, $http) {
 
         var firstNames = ["Sophie", "Isabelle", "Emily", "Olivia", "Lily", "Chloe", "Isabella", "Amelia", "Jessica", "Sophia", "Ava", "Charlotte", "Mia", "Lucy", "Grace", "Ruby", "Ella", "Evie", "Freya", "Isla", "Poppy", "Daisy", "Layla"];
         var lastNames = ["Beckham", "Black", "Braxton", "Brennan", "Brock", "Bryson", "Cadwell", "Cage", "Carson", "Chandler", "Cohen", "Cole", "Corbin", "Dallas", "Dalton", "Dane", "Donovan", "Easton", "Fisher", "Fletcher", "Grady", "Greyson", "Griffin", "Gunner", "Hayden", "Hudson", "Hunter", "Jacoby", "Jagger", "Jaxon", "Jett", "Kade", "Kane", "Keating", "Keegan", "Kingston", "Kobe"];
@@ -87,23 +87,40 @@
         function createRowData() {
             var rowData = [];
 
+            $http({
+                method: 'GET',
+                url: 'http://demo7622837.mockable.io//list'
+              }).then(function successCallback(response) {
+                  console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
             for (var i = 0; i < 50; i++) {
-                var dataType1 = dataType[i % dataType.length];
-                var status1 = ['Active', 'Inactive'][i%2];
-                var date = '10/10/2010'
+                var visibleDataType = dataType[i % dataType.length];
+                var visibleStatus = ['Active', 'Inactive'][i%2];
+                var date = new Date(1582022442780);
                 rowData.push({
                     name: firstNames[i % firstNames.length] + ' ' + lastNames[i % lastNames.length],
                     //mayank
-                    dataType: dataType1,             
+                    dataType: visibleDataType,             
                     size: Math.round(Math.random() * 10),
-                    status: status1,
-                    lastUpdated: date,
+                    status: visibleStatus,
+                    lastUpdated: date.toLocaleString(),
                     associations: Math.round(Math.random() * 10),
                     rating: Math.round((Math.random() * 10)/2)
                 });
             }
             return rowData;
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var gridDiv = document.querySelector('#myGrid');
+            new agGrid.Grid(gridDiv, gridOptions);
+        
+            agGrid.simpleHttpRequest({url: 'https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json'}).then(function(data) {
+                gridOptions.api.setRowData(data.slice(0, 50));
+            });
+        });
 
         function statusRenderer(params){
             var statusType = params.value === 'Active' ? 'green' : 'grey';
