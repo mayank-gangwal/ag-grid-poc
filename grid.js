@@ -112,6 +112,22 @@
             var size = (params.data.itemCount === 0 || params.data.itemCount === 1 ) ? 'Item' : 'Items' ;
             return params.data.itemCount + ' ' + size;
         }
+
+        $scope.disableSave = function(){
+            return ($scope.newListName && $scope.newListDataType && $scope.newListDescription) ? false : true;
+        }
+        $scope.onCancel = function(){
+            clearDataModal();
+        }
+        $scope.onSave = function(){
+            clearDataModal();
+            $('#newListModal').modal('hide');
+        }
+        function clearDataModal(){
+            $scope.newListName = '';
+            $scope.newListDataType = '';
+            $scope.newListDescription = '';
+        }
     });
 
 })();

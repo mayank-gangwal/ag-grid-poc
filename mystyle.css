@@ -33,3 +33,15 @@ body {
     top: 100px; 
     position: absolute;
 }
+.btn-new-list{
+    float: right;
+}
+.custom-body {
+    background-color: #eeeeee;
+}
+.custom-height{
+    height: 200px;    
+}
+.custom-title{
+    margin: auto;
+}

@@ -15,7 +15,7 @@
     "name": "Customer IP List",
     "description": " Customer IP List",
     "dataField": "IP Address",
-    "itemCount": 24,
+    "itemCount": 3,
     "status": "inactive",
     "auditData": {
         "lastUpdatedTime": 1582022442780
@@ -171,7 +171,7 @@
     "name": "Customer IP List",
     "description": " Customer IP List",
     "dataField": "IP Address",
-    "itemCount": 24,
+    "itemCount": 3,
     "status": "inactive",
     "auditData": {
         "lastUpdatedTime": 1582022442780
@@ -327,7 +327,7 @@
     "name": "Customer IP List",
     "description": " Customer IP List",
     "dataField": "IP Address",
-    "itemCount": 24,
+    "itemCount": 3,
     "status": "inactive",
     "auditData": {
         "lastUpdatedTime": 1582022442780
@@ -483,7 +483,7 @@
     "name": "Customer IP List",
     "description": " Customer IP List",
     "dataField": "IP Address",
-    "itemCount": 24,
+    "itemCount": 3,
     "status": "inactive",
     "auditData": {
         "lastUpdatedTime": 1582022442780
