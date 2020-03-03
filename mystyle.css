@@ -29,19 +29,28 @@ body {
 }
 .gridLayout{
     width: 98%; 
-    height: 400px; 
-    top: 100px; 
+    height: 379px; 
+    top: 120px; 
     position: absolute;
 }
 .btn-new-list{
     float: right;
+    margin-right: 30px;
 }
 .custom-body {
-    background-color: #eeeeee;
+    background-color: #F8FAFB;
 }
 .custom-height{
     height: 200px;    
 }
 .custom-title{
     margin: auto;
+}
+.header-icon{
+    font-size: 70px;
+    color: #E2E3E3;
+    margin-left: 8px;
+}
+.btn-save{
+    background-color: #2E2556 !important;
 }

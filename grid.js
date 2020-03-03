@@ -7,17 +7,10 @@
 
         var columnDefs = [
             {
-                headerName: '', 
-                width: 50, 
+                headerName: 'NAME',
+                field: 'name',
                 checkboxSelection: true,
                 headerCheckboxSelection: true,
-                sortable: false,
-                pinned: true,
-                filter: false
-            },
-            {
-                headerName: 'NAME',
-                field: 'name'
             },
             {
                 headerName: 'DATA TYPE',
@@ -64,7 +57,7 @@
             defaultColDef: {
                 sortable: true,
                 filter: true,
-                width: 200
+                width: 210
             }
         };
 
