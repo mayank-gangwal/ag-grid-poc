@@ -9,8 +9,10 @@
       crossorigin="anonymous"
     ></script>
     <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -27,50 +29,66 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
   </head>
   <body>
-    <div ng-app="basic">
-      <div ng-controller="basicController" class="divCtrl">
-        <div class="headingStyle">
-          <h2>Parameter Lists</h2>
+    <div class="outer-container">
+      <h1>List Manager</h1>
+      <div class="inner-container">
+        <div ng-app="basic">
+          <div ng-controller="basicController" class="divCtrl">
+            <div class="headingStyle">
+              <h2>Parameter Lists</h2>
 
-          <hr>
+              <hr />
 
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-secondary btn-new-list"
-            data-toggle="modal"
-            data-target="#newListModal"
-          >
-          <i class="fa fa-table"></i>
-            NEW LIST
-          </button>
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-secondary btn-new-list"
+                data-toggle="modal"
+                data-target="#newListModal"
+              >
+                <i class="fa fa-table"></i>
+                NEW LIST
+              </button>
 
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="newListModal"
-            role="dialog"
-          >
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header custom-height">
-                  <h5 class="modal-title custom-title">
-                    <div class="header-icon">
-                        <span> <i class="fa fa-plus-circle"></i> </span> <br>
+              <!-- Modal -->
+              <div class="modal fade" id="newListModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header custom-height">
+                      <h5 class="modal-title custom-title">
+                        <div class="header-icon">
+                          <span> <i class="fa fa-plus-circle"></i> </span>
+                          <br />
+                        </div>
+                        New List
+                      </h5>
                     </div>
-                    New List
-                  </h5>
-                </div>
-                <div class="modal-body custom-body">
-                    <form>
+                    <div class="modal-body custom-body">
+                      <form>
                         <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">Name *</label>
-                          <input placeholder="Give this list a name" type="text" class="form-control" id="recipient-name" ng-model="newListName">
+                          <label for="recipient-name" class="col-form-label"
+                            >Name *</label
+                          >
+                          <input
+                            placeholder="Give this list a name"
+                            type="text"
+                            class="form-control"
+                            id="recipient-name"
+                            ng-model="newListName"
+                          />
                         </div>
                         <div class="form-group">
-                          <label for="message-text" class="col-form-label">Data Type *</label>
-                          <select class="form-control" id="exampleFormControlSelect1" ng-model="newListDataType">
-                            <option value="" selected disabled>Select a Data type</option>
+                          <label for="message-text" class="col-form-label"
+                            >Data Type *</label
+                          >
+                          <select
+                            class="form-control"
+                            id="exampleFormControlSelect1"
+                            ng-model="newListDataType"
+                          >
+                            <option value="" selected disabled
+                              >Select a Data type</option
+                            >
                             <option>Transaction Currency</option>
                             <option>Channel</option>
                             <option>Acquirer</option>
@@ -79,41 +97,51 @@
                           </select>
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Description *</label>
-                            <textarea placeholder="Write a brief description about this list" maxlength = "255" class="form-control" id="message-text" ng-model="newListDescription"></textarea>
-                          </div>
+                          <label for="message-text" class="col-form-label"
+                            >Description *</label
+                          >
+                          <textarea
+                            placeholder="Write a brief description about this list"
+                            maxlength="255"
+                            class="form-control"
+                            id="message-text"
+                            ng-model="newListDescription"
+                          ></textarea>
+                        </div>
                       </form>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-outline-dark"
-                    data-dismiss="modal"
-                    ng-click="onCancel()"
-                  >
-                  <i class="fa fa-ban"></i>
-                    Cancel
-                  </button>
-                  <button
-                    type="button" 
-                    class="btn btn-secondary btn-save" 
-                    ng-disabled="disableSave()" 
-                    ng-click="onSave()"
-                    data-dismiss="modal"
-                  >
-                  <i class="fa fa-save"></i>
-                    Save
-                  </button>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-outline-dark"
+                        data-dismiss="modal"
+                        ng-click="onCancel()"
+                      >
+                        <i class="fa fa-ban"></i>
+                        Cancel
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-save"
+                        ng-disabled="disableSave()"
+                        ng-click="onSave()"
+                        data-dismiss="modal"
+                      >
+                        <i class="fa fa-save"></i>
+                        Save
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div
+              ag-grid="gridOptions"
+              id="myGrid"
+              class="gridLayout ag-theme-balham ag-basic"
+            ></div>
           </div>
         </div>
-        <div
-          ag-grid="gridOptions"
-          id="myGrid"
-          class="gridLayout ag-theme-balham ag-basic"
-        ></div>
       </div>
     </div>
   </body>

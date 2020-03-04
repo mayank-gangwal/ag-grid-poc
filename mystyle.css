@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    border-style: solid;
 }
 html {
     position: absolute;
@@ -28,10 +29,15 @@ body {
     right: 40px;
 }
 .gridLayout{
-    width: 98%; 
-    height: 379px; 
-    top: 120px; 
+    width: 95%; 
+    height: 400px; 
+    top: 120px;
+    left: 32px;
     position: absolute;
+}
+button:disabled,
+button[disabled]{
+  background-color: #cccccc !important;
 }
 .btn-new-list{
     float: right;
@@ -53,4 +59,11 @@ body {
 }
 .btn-save{
     background-color: #2E2556 !important;
+}
+.inner-container{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    border-top: #F5D40F solid;
+    margin-top: 50px;
 }

@@ -57,7 +57,7 @@
             defaultColDef: {
                 sortable: true,
                 filter: true,
-                width: 210
+                width: 182
             }
         };
 
