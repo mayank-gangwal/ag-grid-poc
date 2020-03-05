@@ -27,15 +27,17 @@
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script> -->
     <script src="grid.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="outer-container">
-      <h1>List Manager</h1>
+    <div class="">
+      <h2 class="main-heading">List Manager</h2>
+      <div class="outer-container">
       <div class="inner-container">
         <div ng-app="basic">
-          <div ng-controller="basicController" class="divCtrl">
-            <div class="headingStyle">
-              <h2>Parameter Lists</h2>
+          <div ng-controller="basicController" class="div-ctrl">
+            <div class="heading-style">
+              <h3 class="sub-heading">Parameter Lists</h3>
 
               <hr />
 
@@ -46,7 +48,7 @@
                 data-toggle="modal"
                 data-target="#newListModal"
               >
-                <i class="fa fa-table"></i>
+                <i class="fa fa-table"></i> &nbsp;
                 NEW LIST
               </button>
 
@@ -64,7 +66,7 @@
                       </h5>
                     </div>
                     <div class="modal-body custom-body">
-                      <form>
+                      <form class="custom-padding">
                         <div class="form-group">
                           <label for="recipient-name" class="col-form-label"
                             >Name *</label
@@ -138,10 +140,11 @@
             <div
               ag-grid="gridOptions"
               id="myGrid"
-              class="gridLayout ag-theme-balham ag-basic"
+              class="grid-layout ag-theme-balham ag-basic"
             ></div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </body>

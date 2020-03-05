@@ -57,7 +57,7 @@
             defaultColDef: {
                 sortable: true,
                 filter: true,
-                width: 182
+                width: 181  //to be made 300 as per requirement
             }
         };
 
