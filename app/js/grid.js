@@ -9,7 +9,8 @@
             {
                 headerName: 'NAME',
                 field: 'name',
-                
+                checkboxSelection: true,
+                headerCheckboxSelection: true
             },
             {
                 headerName: 'DATA TYPE',
@@ -18,9 +19,7 @@
             {
                 headerName: 'SIZE',
                 field: 'itemCount',
-                cellRenderer: sizeRenderer,
-                checkboxSelection: true,
-                headerCheckboxSelection: true,
+                cellRenderer: sizeRenderer
             },
             {
                 headerName: 'STATUS',
@@ -62,7 +61,6 @@
             }
         };
 
-        createRowData();
         function createRowData() {
             $http({
                 method: 'GET',
