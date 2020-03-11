@@ -10,12 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "ag-grid-community": "^21.1.0",
-    "angular-mocks": "^1.7.9"
+    "angular-mocks": "^1.7.9",
+    "grunt-jasmine-runner": "^0.6.0"
   },
   "devDependencies": {
+    "bower": "^1.8.8",
+    "grunt": "^1.0.4",
+    "grunt-contrib-jasmine": "^2.1.0",
     "jasmine": "^3.5.0",
     "karma": "^4.4.1",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-jasmine": "^3.1.1"
+    "karma-jasmine": "^3.1.1",
+    "karma-phantomjs-launcher": "^1.0.4"
   }
 }

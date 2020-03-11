@@ -87,7 +87,7 @@
             //var fontAwesomeStar = '<i class="fas fa-star"></i>'
             for(var i =0; i < params.value; i++){
                 //stars+= fontAwesomeStar;
-                stars += '<img src="images/star.svg" class="star" width="12" height="12"></img>'
+                stars += '<img src="../images/star.svg" class="star" width="12" height="12"></img>'
                 //stars+='* ';
             }
             return stars;

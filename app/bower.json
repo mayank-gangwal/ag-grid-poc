@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "homepage": "https://github.com/mayank-gangwal/ag-grid-poc",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.9",
+    "angular-mocks": "^1.7.9"
+  }
+}
